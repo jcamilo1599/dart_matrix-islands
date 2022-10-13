@@ -4,12 +4,12 @@ void main() {
 
 class Matrix {
   static int getIslands() {
-    final List<List<int>> matrix = [
-      [1, 1, 0, 1, 1],
-      [1, 1, 0, 0, 0],
-      [0, 1, 0, 0, 0],
-      [0, 1, 0, 0, 1],
-      [1, 1, 0, 1, 1]
+    final List<List<int>> matrix = <List<int>>[
+      <int>[1, 1, 0, 1, 1],
+      <int>[1, 1, 0, 0, 0],
+      <int>[0, 1, 0, 0, 0],
+      <int>[0, 1, 0, 0, 1],
+      <int>[1, 1, 0, 1, 1]
     ];
 
     return _countIslands(matrix);
@@ -21,7 +21,7 @@ class Matrix {
 
     // Para calcular el número de columnas obtiene la longitud de la primer
     // lista de la matrix
-    final columnsNumber = matrix[0].length;
+    final int columnsNumber = matrix[0].length;
 
     // Recorre la matriz completa
     for (int numberList = 0; numberList < matrix.length; numberList++) {
@@ -65,7 +65,7 @@ class Matrix {
   }) {
     /// Para calcular el número de columnas obtiene la longitud de la primer
     /// lista de la matrix
-    final columnsNumber = matrix[0].length;
+    final int columnsNumber = matrix[0].length;
 
     if (adjacentDirectionH < 0 ||
         adjacentDirectionH >= matrix.length ||
@@ -79,7 +79,7 @@ class Matrix {
 
     /// Si el elemento de la matriz ya fue recorrido lo convierte en "-1" para
     /// ignorarlo en las siguientes vueltas del ciclo
-    matrix[adjacentDirectionH][adjacentDirectionV] *= (-1);
+    matrix[adjacentDirectionH][adjacentDirectionV] *= -1;
 
     /// Recorre la cantidad de veces que se le indique en el tipo de busqueda,
     /// así según "TypeSearch..." buscara solo abyacentes o también diagonales
@@ -98,17 +98,17 @@ class Matrix {
 
   /// Lista de direcciones que utilizara para buscar si a los alrededores de una
   /// coordenada hay una coordenada valor valido
-  static final List<List<int>> _directions = [
+  static final List<List<int>> _directions = <List<int>>[
     // Coordenadas para buscar abyacentes
-    [0, -1],
-    [-1, 0],
-    [0, 1],
-    [1, 0],
+    <int>[0, -1],
+    <int>[-1, 0],
+    <int>[0, 1],
+    <int>[1, 0],
     // Coordenadas para buscar diagonales
-    [-1, 1],
-    [-1, -1],
-    [1, -1],
-    [1, 1],
+    <int>[-1, 1],
+    <int>[-1, -1],
+    <int>[1, -1],
+    <int>[1, 1],
   ];
 }
 
