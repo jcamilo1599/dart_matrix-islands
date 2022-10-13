@@ -84,7 +84,7 @@ class Matrix {
     /// Recorre la cantidad de veces que se le indique en el tipo de busqueda,
     /// así según "TypeSearch..." buscara solo abyacentes o también diagonales
     for (int searchNumber = 0;
-        searchNumber < TypeSearch.diagonals.value;
+        searchNumber < TypeSearch.adjacent.value;
         searchNumber++) {
       _arrangeIslandCoordinates(
         matrix: matrix,
